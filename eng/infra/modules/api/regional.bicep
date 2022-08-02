@@ -111,11 +111,9 @@ resource function 'Microsoft.Web/sites@2022-03-01' = {
 // Resources
 // ---------
 
-// TODO: Remove static value - Scope
-
 resource insight 'Microsoft.Insights/components@2020-02-02' existing = {
   name: global.name
-  scope: resourceGroup('Latency-Global')
+  scope: resourceGroup(globalGroupName)
 }
 
 // ---------
@@ -124,6 +122,8 @@ resource insight 'Microsoft.Insights/components@2020-02-02' existing = {
 
 var name = region.name
 var location = region.location
+
+var globalGroupName = 'Latency-Global'
 
 // ----------
 // Parameters
