@@ -9,14 +9,15 @@ targetScope = 'subscription'
 // ---------
 
 resource globalApiGroup 'Microsoft.Resources/resourceGroups@2021-04-01' = {
-  name: 'Latency-Global'
+  name: globalGroupName
   location: config.global.location
 }
 
-resource regionalApiGroups 'Microsoft.Resources/resourceGroups@2021-04-01' = [for region in config.regions: {
-  name: 'Latency-Regional-${region.country}'
-  location: region.location
-}]
+resource regionalApiGroups 'Microsoft.Resources/resourceGroups@2021-04-01' = {
+  name: regionalGroupName
+  location: config.global.location
+  dependsOn: [ globalApiGroup ]
+}
 
 // -------
 // Modules
@@ -31,14 +32,15 @@ module globalApiResources 'modules/api/global.bicep' = {
   }
 }
 
-module regionalApiResources 'modules/api/regional.bicep' = [for region in config.regions: {
-  name: 'Microsoft.Resources.Region.${region.country}'
-  scope: resourceGroup('Latency-Regional-${region.country}')
+module regionalApiResources 'modules/api/regional.bicep' = [for region in config.regions: if (region.enabled == true) {
+  name: 'Microsoft.Resources.Regional.${region.country}'
+  scope: resourceGroup(regionalApiGroups.name)
   params: {
     global: config.global
     region: region
     tags: tags
   }
+  dependsOn: [ globalApiResources ]
 }]
 
 // ---------
@@ -46,6 +48,10 @@ module regionalApiResources 'modules/api/regional.bicep' = [for region in config
 // ---------
 
 var config = loadJsonContent('../config//data.json')
+
+var globalGroupName = 'Latency-Global'
+var regionalGroupName = 'Latency-Regional'
+
 var tags = {
   created: '01/08/22'
   modified: date
