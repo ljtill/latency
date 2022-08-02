@@ -6,22 +6,72 @@
     },
     "regions": [
         {
+            "name": "amhxmemc",
+            "location": "australiaeast",
+            "country": "Australia",
+            "enabled": true,
+            "comment": ""
+        },
+        {
             "name": "buusxxqc",
             "location": "brazilsouth",
             "country": "Brazil",
-            "enabled": true
+            "enabled": true,
+            "comment": ""
         },
         {
             "name": "cevvgtuu",
             "location": "canadacentral",
             "country": "Canada",
-            "enabled": false,
-            "comment": "Unsupported resource types"
+            "enabled": true,
+            "comment": ""
         },
         {
-            "name": "ewvwedbf",
-            "location": "eastus2",
-            "country": "UnitedStates",
+            "name": "wfeddgrk",
+            "location": "westindia",
+            "country": "India",
+            "enabled": true,
+            "comment": ""
+        },
+        {
+            "name": "jdjwsmxg",
+            "location": "japaneast",
+            "country": "Japan",
+            "enabled": true,
+            "comment": ""
+        },
+        {
+            "name": "wauatggm",
+            "location": "westeurope",
+            "country": "Netherlands",
+            "enabled": true,
+            "comment": ""
+        },
+        {
+            "name": "shsfgfbz",
+            "location": "southeastasia",
+            "country": "Singapore",
+            "enabled": false,
+            "comment": "Quota exceeded"
+        },
+        {
+            "name": "snzhtfzb",
+            "location": "southafricanorth",
+            "country": "SouthAfrica",
+            "enabled": false,
+            "comment": "Quota exceeded"
+        },
+        {
+            "name": "khuwvxkp",
+            "location": "koreacentral",
+            "country": "Korea",
+            "enabled": false,
+            "comment": ""
+        },
+        {
+            "name": "uqvwsnmd",
+            "location": "uaenorth",
+            "country": "UnitedArabEmirates",
             "enabled": false,
             "comment": ""
         },
@@ -33,58 +83,11 @@
             "comment": ""
         },
         {
-            "name": "wauatggm",
-            "location": "westeurope",
-            "country": "Netherlands",
+            "name": "ewvwedbf",
+            "location": "eastus",
+            "country": "UnitedStates",
             "enabled": false,
             "comment": ""
-        },
-        {
-            "name": "snzhtfzb",
-            "location": "southafricanorth",
-            "country": "SouthAfrica",
-            "enabled": false,
-            "comment": "Capacity is not available"
-        },
-        {
-            "name": "uqvwsnmd",
-            "location": "uaenorth",
-            "country": "UnitedArabEmirates",
-            "enabled": false,
-            "comment": ""
-        },
-        {
-            "name": "cfeddgrk",
-            "location": "centralindia",
-            "country": "India",
-            "enabled": false,
-            "comment": ""
-        },
-        {
-            "name": "khuwvxkp",
-            "location": "koreacentral",
-            "country": "SouthKorea",
-            "enabled": false,
-            "comment": ""
-        },
-        {
-            "name": "shsfgfbz",
-            "location": "southeastasia",
-            "country": "Signapore",
-            "enabled": false,
-            "comment": "Capacity is not available"
-        },
-        {
-            "name": "jdjwsmxg",
-            "location": "japaneast",
-            "country": "Japan",
-            "enabled": false
-        },
-        {
-            "name": "amhxmemc",
-            "location": "australiaeast",
-            "country": "Australia",
-            "enabled": false
         }
     ]
 }
