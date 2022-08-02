@@ -1,0 +1,90 @@
+{
+    "global": {
+        "url": "latency.ljtill.com",
+        "name": "wfddqcmq",
+        "location": "westus2"
+    },
+    "regions": [
+        {
+            "name": "buusxxqc",
+            "location": "brazilsouth",
+            "country": "Brazil",
+            "enabled": true
+        },
+        {
+            "name": "cevvgtuu",
+            "location": "canadacentral",
+            "country": "Canada",
+            "enabled": false,
+            "comment": "Unsupported resource types"
+        },
+        {
+            "name": "ewvwedbf",
+            "location": "eastus2",
+            "country": "UnitedStates",
+            "enabled": false,
+            "comment": ""
+        },
+        {
+            "name": "uujhurrr",
+            "location": "uksouth",
+            "country": "UnitedKingdom",
+            "enabled": false,
+            "comment": ""
+        },
+        {
+            "name": "wauatggm",
+            "location": "westeurope",
+            "country": "Netherlands",
+            "enabled": false,
+            "comment": ""
+        },
+        {
+            "name": "snzhtfzb",
+            "location": "southafricanorth",
+            "country": "SouthAfrica",
+            "enabled": false,
+            "comment": "Capacity is not available"
+        },
+        {
+            "name": "uqvwsnmd",
+            "location": "uaenorth",
+            "country": "UnitedArabEmirates",
+            "enabled": false,
+            "comment": ""
+        },
+        {
+            "name": "cfeddgrk",
+            "location": "centralindia",
+            "country": "India",
+            "enabled": false,
+            "comment": ""
+        },
+        {
+            "name": "khuwvxkp",
+            "location": "koreacentral",
+            "country": "SouthKorea",
+            "enabled": false,
+            "comment": ""
+        },
+        {
+            "name": "shsfgfbz",
+            "location": "southeastasia",
+            "country": "Signapore",
+            "enabled": false,
+            "comment": "Capacity is not available"
+        },
+        {
+            "name": "jdjwsmxg",
+            "location": "japaneast",
+            "country": "Japan",
+            "enabled": false
+        },
+        {
+            "name": "amhxmemc",
+            "location": "australiaeast",
+            "country": "Australia",
+            "enabled": false
+        }
+    ]
+}
