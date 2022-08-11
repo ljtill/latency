@@ -23,7 +23,7 @@ resource regionalApiGroups 'Microsoft.Resources/resourceGroups@2021-04-01' = {
 // Modules
 // -------
 
-module globalApiResources 'modules/api/global.bicep' = {
+module globalApiResources 'modules/api/resources.global.bicep' = {
   name: 'Microsoft.Resources.Global'
   scope: resourceGroup(globalApiGroup.name)
   params: {
@@ -32,7 +32,7 @@ module globalApiResources 'modules/api/global.bicep' = {
   }
 }
 
-module regionalApiResources 'modules/api/regional.bicep' = [for region in config.regions: if (region.enabled == true) {
+module regionalApiResources 'modules/api/resources.regional.bicep' = [for region in config.regions: if (region.enabled == true) {
   name: 'Microsoft.Resources.Regional.${region.country}'
   scope: resourceGroup(regionalApiGroups.name)
   params: {
