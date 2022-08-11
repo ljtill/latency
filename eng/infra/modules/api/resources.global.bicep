@@ -4,8 +4,8 @@
 
 // Log Analytics
 resource workspace 'Microsoft.OperationalInsights/workspaces@2020-10-01' = {
-  name: name
-  location: location
+  name: global.resources.name
+  location: global.resources.location
   properties: {
     sku: {
       name: 'PerGB2018'
@@ -16,8 +16,8 @@ resource workspace 'Microsoft.OperationalInsights/workspaces@2020-10-01' = {
 
 // App Insights
 resource component 'Microsoft.Insights/components@2020-02-02-preview' = {
-  name: name
-  location: location
+  name: global.resources.name
+  location: global.resources.location
   kind: 'web'
   properties: {
     Application_Type: 'web'
@@ -25,13 +25,6 @@ resource component 'Microsoft.Insights/components@2020-02-02-preview' = {
   }
   tags: tags
 }
-
-// ---------
-// Variables
-// ---------
-
-var name = global.name
-var location = global.location
 
 // ----------
 // Parameters

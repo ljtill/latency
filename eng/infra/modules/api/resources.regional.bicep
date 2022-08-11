@@ -4,8 +4,8 @@
 
 // Storage Account
 resource account 'Microsoft.Storage/storageAccounts@2021-08-01' = {
-  name: name
-  location: location
+  name: region.name
+  location: region.location
   sku: {
     name: 'Standard_LRS'
   }
@@ -19,8 +19,8 @@ resource account 'Microsoft.Storage/storageAccounts@2021-08-01' = {
 
 // Key Vault
 resource vault 'Microsoft.KeyVault/vaults@2021-11-01-preview' = {
-  name: name
-  location: location
+  name: region.name
+  location: region.location
   properties: {
     sku: {
       name: 'standard'
@@ -46,8 +46,8 @@ resource vault 'Microsoft.KeyVault/vaults@2021-11-01-preview' = {
 
 // App Service Plan
 resource plan 'Microsoft.Web/serverfarms@2021-03-01' = {
-  name: name
-  location: location
+  name: region.name
+  location: region.location
   kind: 'linux'
   sku: {
     name: 'Y1'
@@ -61,8 +61,8 @@ resource plan 'Microsoft.Web/serverfarms@2021-03-01' = {
 
 // Function App
 resource function 'Microsoft.Web/sites@2022-03-01' = {
-  name: name
-  location: location
+  name: region.name
+  location: region.location
   kind: 'functionapp,linux'
   identity: {
     type: 'SystemAssigned'
@@ -96,7 +96,7 @@ resource function 'Microsoft.Web/sites@2022-03-01' = {
         }
         {
           name: 'WEBSITE_CONTENTSHARE'
-          value: '${name}a8c6'
+          value: '${region.name}a8c6'
         }
       ]
       linuxFxVersion: 'Node|16'
@@ -112,18 +112,9 @@ resource function 'Microsoft.Web/sites@2022-03-01' = {
 // ---------
 
 resource insight 'Microsoft.Insights/components@2020-02-02' existing = {
-  name: global.name
-  scope: resourceGroup(globalGroupName)
+  name: global.resources.name
+  scope: resourceGroup(global.resourceGroup.name)
 }
-
-// ---------
-// Variables
-// ---------
-
-var name = region.name
-var location = region.location
-
-var globalGroupName = 'Latency-Global'
 
 // ----------
 // Parameters
