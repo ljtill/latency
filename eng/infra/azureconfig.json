@@ -1,0 +1,81 @@
+{
+    "global": {
+        "resourceGroup": {
+            "name": "Global-Resources",
+            "location": "westus2"
+        },
+        "resources": {
+            "url": "latency.ljtill.com",
+            "name": "wfddqcmq",
+            "location": "westus2"
+        }
+    },
+    "regional": {
+        "resourceGroup": {
+            "name": "Regional-Resources",
+            "location": "westus2"
+        },
+        "resources": [
+            {
+                "name": "amhxmemc",
+                "location": "australiaeast",
+                "enabled": true
+            },
+            {
+                "name": "buusxxqc",
+                "location": "brazilsouth",
+                "enabled": true
+            },
+            {
+                "name": "cevvgtuu",
+                "location": "canadacentral",
+                "enabled": true
+            },
+            {
+                "name": "wfeddgrk",
+                "location": "westindia",
+                "enabled": true
+            },
+            {
+                "name": "jdjwsmxg",
+                "location": "japaneast",
+                "enabled": true
+            },
+            {
+                "name": "wauatggm",
+                "location": "westeurope",
+                "enabled": true
+            },
+            {
+                "name": "shsfgfbz",
+                "location": "southeastasia",
+                "enabled": false
+            },
+            {
+                "name": "snzhtfzb",
+                "location": "southafricanorth",
+                "enabled": false
+            },
+            {
+                "name": "khuwvxkp",
+                "location": "koreacentral",
+                "enabled": false
+            },
+            {
+                "name": "uqvwsnmd",
+                "location": "uaenorth",
+                "enabled": false
+            },
+            {
+                "name": "uujhurrr",
+                "location": "uksouth",
+                "enabled": false
+            },
+            {
+                "name": "ewvwedbf",
+                "location": "eastus",
+                "enabled": false
+            }
+        ]
+    }
+}
