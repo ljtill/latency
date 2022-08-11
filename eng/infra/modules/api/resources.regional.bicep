@@ -112,8 +112,8 @@ resource function 'Microsoft.Web/sites@2022-03-01' = {
 // ---------
 
 resource insight 'Microsoft.Insights/components@2020-02-02' existing = {
-  name: global.resources.name
   scope: resourceGroup(global.resourceGroup.name)
+  name: global.resources.name
 }
 
 // ----------

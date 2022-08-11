@@ -23,24 +23,34 @@ resource regionalResourceGroup 'Microsoft.Resources/resourceGroups@2021-04-01' =
 // Modules
 // -------
 
-module globalResources 'modules/api/resources.global.bicep' = {
-  name: 'Microsoft.Resources.Global'
+// Resources - Api
+module globalApiResources 'modules/api/resources.global.bicep' = {
   scope: globalResourceGroup
+  name: 'Microsoft.Resources.Global.Api'
   params: {
     global: global
     tags: tags
   }
 }
-module regionalResources 'modules/api/resources.regional.bicep' = [for region in regional.resources: if (region.enabled == true) {
-  name: 'Microsoft.Resources.Regional.${defaults.locations[region.location]}'
+module regionalApiResources 'modules/api/resources.regional.bicep' = [for region in regional.resources: if (region.enabled == true) {
+  name: 'Microsoft.Resources.Regional.${defaults.locations[region.location]}.Api'
   scope: regionalResourceGroup
   params: {
     global: global
     region: region
     tags: tags
   }
-  dependsOn: [ globalResources ]
+  dependsOn: [ globalApiResources ]
 }]
+
+// Resources - App
+module globalAppResources 'modules/app/resources.global.bicep' = {
+  scope: globalResourceGroup
+  name: 'Microsoft.Resources.Global.App'
+  params: {
+    global: global
+  }
+}
 
 // ---------
 // Variables

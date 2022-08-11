@@ -1,7 +1,15 @@
 {
     "analyzers": {
         "core": {
-            "rules": {}
+            "enabled": true,
+            "rules": {
+                "no-hardcoded-env-urls": {
+                    "level": "warning",
+                    "excludedhosts": [
+                        "core.windows.net"
+                    ]
+                }
+            }
         }
     }
 }
